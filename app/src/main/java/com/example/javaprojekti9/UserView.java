@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 public class UserView extends AppCompatActivity {
 
@@ -21,6 +23,12 @@ public class UserView extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(new UserListAdapter(getApplicationContext(), storage.getUsers()));
 
+    }
+
+    public void goBackToMainView (View view) {
+
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 
 }

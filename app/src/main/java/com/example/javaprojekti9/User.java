@@ -1,5 +1,7 @@
 package com.example.javaprojekti9;
 
+import java.util.ArrayList;
+
 public class User {
 
     private String firstName;
@@ -8,11 +10,14 @@ public class User {
     private String degreeProgram;
     private int image;
 
-    public User (String firstName, String lastName, String email, String degreeProgram) {
+    private ArrayList<String> levels = new ArrayList<>();
+
+    public User (String firstName, String lastName, String email, String degreeProgram, ArrayList<String> levels) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.degreeProgram = degreeProgram;
+        this.levels = levels;
     }
 
     public void setImage(int i) {
