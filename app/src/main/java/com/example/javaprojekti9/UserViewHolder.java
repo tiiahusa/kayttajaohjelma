@@ -2,6 +2,7 @@ package com.example.javaprojekti9;
 
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.MultiAutoCompleteTextView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -10,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 public class UserViewHolder extends RecyclerView.ViewHolder { // Create class what extends recyclerviewer
 
     ImageView image;
-    TextView name, email, degree;
+    TextView name, email, degree, levels;
 
 
     public UserViewHolder(@NonNull View itemView) {
@@ -19,5 +20,6 @@ public class UserViewHolder extends RecyclerView.ViewHolder { // Create class wh
         name = itemView.findViewById(R.id.txtName);
         email = itemView.findViewById(R.id.txtEmail);
         degree = itemView.findViewById(R.id.txtDegreeProgram);
+        levels = itemView.findViewById(R.id.tbDegreeLevels);
     }
 }

@@ -50,6 +50,8 @@ public class User {
         return email;
     }
 
+    public ArrayList<String> getLevels() {return levels;}
+
     public String getDegreeProgram() {
         return degreeProgram;
     }

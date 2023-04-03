@@ -15,6 +15,7 @@ public class UserListAdapter extends RecyclerView.Adapter<UserViewHolder> {
 
     private Context context;
     private ArrayList<User> users = new ArrayList<>();
+    private ArrayList<String> levelList = new ArrayList<>();
 
     public UserListAdapter(Context context, ArrayList<User> users) {
         this.context = context;
@@ -29,10 +30,16 @@ public class UserListAdapter extends RecyclerView.Adapter<UserViewHolder> {
 
     @Override // Add values to labels
     public void onBindViewHolder(@NonNull UserViewHolder holder, int position) {
+        String helper = "Suoritetut tutkinnot: \n";
         holder.name.setText(users.get(position).getFirstName() + " " + users.get(position).getLastName());
         holder.email.setText(users.get(position).getEmail());
         holder.degree.setText(users.get(position).getDegreeProgram());
         holder.image.setImageResource(users.get(position).getImage());
+        levelList = users.get(position).getLevels();
+        for (String level: levelList) {
+             helper += "- " + level + "\n";
+        }
+        holder.levels.setText(helper);
     }
 
     @Override
