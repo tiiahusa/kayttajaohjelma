@@ -8,10 +8,16 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.SortedMap;
+import java.util.TreeMap;
+
 public class UserView extends AppCompatActivity {
 
     private UserStorage storage;
     private RecyclerView recyclerView;
+    private ArrayList<User> users = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,7 +27,11 @@ public class UserView extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.rvUserList);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter(new UserListAdapter(getApplicationContext(), storage.getUsers()));
+        SortedMap<String, User> list = storage.getUsers();
+        for(String key : list.keySet() ) {
+            users.add(list.get(key));
+        }
+        recyclerView.setAdapter(new UserListAdapter(getApplicationContext(), users));
 
     }
 

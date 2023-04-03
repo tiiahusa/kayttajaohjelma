@@ -8,11 +8,14 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import java.util.SortedMap;
+import java.util.TreeMap;
 
 public class UserStorage {
 
     private static UserStorage storage = null; // Storage class singleton setting
-    private ArrayList<User> users = new ArrayList<>(); // User-list
+    //private ArrayList<User> users = new ArrayList<>(); // User-list
+    private SortedMap<String, User> users = new TreeMap<>();
 
     private UserStorage() { // Singleton storage must be private, then you can't use it in main
 
@@ -25,13 +28,13 @@ public class UserStorage {
         return storage; // return storage (old or new)
     }
 
-    public ArrayList<User> getUsers () {
+    public SortedMap<String, User> getUsers () {
         return users;
     }
 
     public void addUser(User user) {
-
-        users.add(user);
+        String lastName = user.getLastName();
+        users.put(lastName, user);
     }
 
     public void saveUser(Context context) {
@@ -56,7 +59,7 @@ public class UserStorage {
             // create object input stream name users.data
             ObjectInputStream userReader = new ObjectInputStream(context.openFileInput("users.data"));
             // Read file to Arraylist name users
-            users = (ArrayList<User>) userReader.readObject();
+            users = (TreeMap<String, User>) userReader.readObject();
             // close file
             userReader.close();
             // Notification to view

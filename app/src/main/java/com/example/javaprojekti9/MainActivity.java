@@ -15,6 +15,9 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import java.util.SortedMap;
+import java.util.TreeMap;
+
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -32,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
     private Integer[] cboxeIds = {R.id.cbKandi, R.id.cbDippa, R.id.cbTohtori, R.id.cbUima}; //Create list of cb's ids
     private String degreeProgram;
     private RadioGroup rgDegrees, rgImages;
-    private ArrayList<User> users = new ArrayList<>();
+    private SortedMap<String, User> users = new TreeMap<>();
     private ArrayList<String> levels = new ArrayList<>();
     private Context context; // Introduce context
 
@@ -133,10 +136,10 @@ public class MainActivity extends AppCompatActivity {
     public void listUsers(View view) {
 
         users = storage.getUsers();
-        for (User u:users
+        /*/for (User u:users
              ) {
             System.out.println(u.getDegreeProgram() + " opiskelija " + u.getFirstName() + " " + u.getLastName() + " e-mail: " + u.getEmail());
-        }
+        }/*/
     }
 
     public void listUsersView (View view) {
