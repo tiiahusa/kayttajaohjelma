@@ -62,13 +62,9 @@ public class UserStorage {
             users = (TreeMap<String, User>) userReader.readObject();
             // close file
             userReader.close();
-            // Notification to view
-            if(users.isEmpty()) {
-                Toast.makeText(context, "Tiedostossa ei ollut yhtään käyttäjää", Toast.LENGTH_LONG).show();
-            } else
-            Toast.makeText(context, "Käyttäjät ladattu", Toast.LENGTH_LONG).show();
+
         } catch (FileNotFoundException e) { // If file not found
-            Toast.makeText(context, "Käyttäjien lataaminen ei onnistunut!", Toast.LENGTH_LONG).show();
+            Toast.makeText(context, "Käyttäjälistaa ei löytynyt!", Toast.LENGTH_LONG).show();
             System.out.println("Käyttäjien lataaminen ei onnistunut!");
             e.printStackTrace();
         } catch (IOException e) { // IO problem

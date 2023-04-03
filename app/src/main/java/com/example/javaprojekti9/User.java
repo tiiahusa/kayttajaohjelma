@@ -1,8 +1,9 @@
 package com.example.javaprojekti9;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class User {
+public class User implements Serializable {
 
     private String firstName;
     private String lastName;
@@ -10,6 +11,7 @@ public class User {
     private String degreeProgram;
     private int image;
     private String degreeLevels;
+    protected static final long serialVersionUID = 24234298L;
 
     public User (String firstName, String lastName, String email, String degreeProgram, ArrayList<String> levels) {
         this.firstName = firstName;

@@ -43,7 +43,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="140dp"
+            android:layout_height="120dp"
             android:layout_marginTop="40dp"
             android:orientation="horizontal">
 
@@ -59,25 +59,25 @@
                 <RadioButton
                     android:id="@+id/rbTietotekniikka"
                     android:layout_width="match_parent"
-                    android:layout_height="31dp"
+                    android:layout_height="30dp"
                     android:text="Tietotekniikka" />
 
                 <RadioButton
                     android:id="@+id/rbTuotantotalous"
                     android:layout_width="match_parent"
-                    android:layout_height="29dp"
+                    android:layout_height="30dp"
                     android:text="Tuotantotalous" />
 
                 <RadioButton
                     android:id="@+id/rbAutomaatio"
                     android:layout_width="match_parent"
-                    android:layout_height="31dp"
+                    android:layout_height="30dp"
                     android:text="Automaatiotekniikka" />
 
                 <RadioButton
                     android:id="@+id/rbSahkotekniikka"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="30dp"
                     android:text="Sähkötekniikka" />
 
             </RadioGroup>
@@ -118,7 +118,7 @@
         <RadioGroup
             android:id="@+id/rgImages"
             android:layout_width="300dp"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:layout_gravity="center"
             android:layout_marginStart="15dp"
             android:layout_marginTop="25dp"
@@ -147,15 +147,15 @@
         <Button
             android:id="@+id/btAddUser"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:onClick="addUser"
             android:text="Lisää käyttäjä" />
 
         <Button
             android:id="@+id/btnListUsers"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="0dp"
             android:onClick="listUsersView"
             android:text="Listaa käyttäjät" />
