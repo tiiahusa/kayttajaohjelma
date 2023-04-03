@@ -9,15 +9,17 @@ public class User {
     private String email;
     private String degreeProgram;
     private int image;
-
-    private ArrayList<String> levels = new ArrayList<>();
+    private String degreeLevels;
 
     public User (String firstName, String lastName, String email, String degreeProgram, ArrayList<String> levels) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.degreeProgram = degreeProgram;
-        this.levels = levels;
+        degreeLevels = "Suoritetut tutkinnot: \n";
+        for (String level: levels) {
+            degreeLevels += "- " + level + "\n";
+        }
     }
 
     public void setImage(int i) {
@@ -50,7 +52,7 @@ public class User {
         return email;
     }
 
-    public ArrayList<String> getLevels() {return levels;}
+    public String getLevels() {return degreeLevels;}
 
     public String getDegreeProgram() {
         return degreeProgram;

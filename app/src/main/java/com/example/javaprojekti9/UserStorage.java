@@ -60,10 +60,10 @@ public class UserStorage {
             // close file
             userReader.close();
             // Notification to view
-            if(users.isEmpty()) {
+            /*/if(users.isEmpty()) {
                 Toast.makeText(context, "Tiedostossa ei ollut yhtään käyttäjää", Toast.LENGTH_LONG).show();
             } else
-            Toast.makeText(context, "Käyttäjät ladattu", Toast.LENGTH_LONG).show();
+            Toast.makeText(context, "Käyttäjät ladattu", Toast.LENGTH_LONG).show();/*/
         } catch (FileNotFoundException e) { // If file not found
             Toast.makeText(context, "Käyttäjien lataaminen ei onnistunut!", Toast.LENGTH_LONG).show();
             e.printStackTrace();
